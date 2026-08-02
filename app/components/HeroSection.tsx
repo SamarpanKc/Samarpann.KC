@@ -110,7 +110,7 @@ export default function HeroSection() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
-          >
+          ><br />
             SAMARPANN KC
           </span>
         </h1>
@@ -159,7 +159,7 @@ export default function HeroSection() {
         >
           <span className="hero-pill-badge">✦ Brand Systems</span>
           <span className="hero-pill-badge">◈ Visual Identity</span>
-          <span className="hero-pill-badge">⬟ Event Architecture</span>
+          <span className="hero-pill-badge">⬟ Event Design</span>
           <span className="hero-pill-badge">✥ Spatial Strategy</span>
         </div>
 
