@@ -9,16 +9,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Samarpann KC — Event & Brand Designer",
+  title: "Samarpann KC | Designer",
   description:
-    "I'm Samarpann KC — an Event & Brand Designer with 3+ years of experience turning complex messages into sharp, unignorable visual identities across Nepal and beyond.",
+    "I'm Samarpann KC, an Brand, Graphics & Event Designer with 3+ years of experience turning complex messages into sharp, unignorable visual identities across Nepal and beyond.",
   keywords: [
     "brand designer",
     "event designer",
     "visual identity",
     "Nepal",
     "Pokhara",
+    "Kathmandu",
     "Samarpann KC",
+    "skc",
+    "samarpan kc",
+    "samarpan design",
     "graphic design",
     "logo design",
   ],
@@ -27,14 +31,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Samarpann KC — Event & Brand Designer",
+    title: "Samarpann KC | Event & Brand Designer",
     description:
       "Design is communication, not decoration. 3+ years designing for events, brands, and products in Pokhara, Nepal.",
     siteName: "Samarpann KC Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Samarpann KC — Event & Brand Designer",
+    title: "Samarpann KC | Event & Brand Designer",
     description:
       "Design is communication, not decoration. Event & Brand Designer based in Pokhara, Nepal.",
   },

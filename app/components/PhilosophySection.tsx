@@ -91,6 +91,7 @@ export default function PhilosophySection() {
 
           {/* Credential pills */}
           <div
+            className="philosophy-credential-pills"
             style={{
               display: "flex",
               flexWrap: "wrap",
@@ -100,8 +101,8 @@ export default function PhilosophySection() {
             }}
           >
             {[
-              "Event Branding",
               "Brand Identity",
+              "Event Branding",
               "Packaging Design",
               "Spatial Graphics",
               "UI/UX Direction",

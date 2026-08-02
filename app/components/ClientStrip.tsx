@@ -8,17 +8,19 @@ const clients = [
   "Feedax",
   "SR Holdings",
   "Square Auto World",
+  "Nepal Tourism Board",
   "PHOMI",
   "Pokhara Internet",
   "NYEF",
   "Franklin Edu Consultancy",
   "Everest Consulting",
+  "Synexis Softech",
 ];
 
-// Duplicate list to achieve seamless infinite loop scrolling
-const marqueeClients = [...clients, ...clients, ...clients];
-
 export default function ClientStrip() {
+  const row1Clients = clients.slice(0, 6);
+  const row2Clients = clients.slice(6);
+
   return (
     <section
       aria-label="Clients and collaborators"
@@ -45,30 +47,140 @@ export default function ClientStrip() {
         </p>
       </div>
 
-      {/* Marquee Wrapper with left/right fade mask */}
+      {/* Mobile Only: Two-Liner Continuous Marquee (<768px) */}
       <div
-        className="marquee-mask"
+        className="mobile-marquee-wrap"
+        style={{ flexDirection: "column", gap: "1.25rem" }}
+      >
+        {/* Row 1: Right to Left */}
+        <div
+          className="marquee-mask marquee-wrapper"
+          style={{
+            width: "100%",
+            overflow: "hidden",
+            display: "flex",
+            position: "relative",
+          }}
+        >
+          <ul
+            role="list"
+            aria-label="Client marquee row 1"
+            className="animate-marquee-continuous"
+            style={{
+              listStyle: "none",
+              paddingLeft: 0,
+              margin: 0,
+            }}
+          >
+            {row1Clients.map((client, index) => (
+              <li key={`r1-t1-${client}-${index}`}>
+                <ClientBadge name={client} />
+              </li>
+            ))}
+          </ul>
+
+          <ul
+            role="list"
+            aria-hidden="true"
+            className="animate-marquee-continuous"
+            style={{
+              listStyle: "none",
+              paddingLeft: 0,
+              margin: 0,
+            }}
+          >
+            {row1Clients.map((client, index) => (
+              <li key={`r1-t2-${client}-${index}`}>
+                <ClientBadge name={client} />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Row 2: Left to Right */}
+        <div
+          className="marquee-mask marquee-wrapper"
+          style={{
+            width: "100%",
+            overflow: "hidden",
+            display: "flex",
+            position: "relative",
+          }}
+        >
+          <ul
+            role="list"
+            aria-label="Client marquee row 2"
+            className="animate-marquee-continuous-right"
+            style={{
+              listStyle: "none",
+              paddingLeft: 0,
+              margin: 0,
+            }}
+          >
+            {row2Clients.map((client, index) => (
+              <li key={`r2-t1-${client}-${index}`}>
+                <ClientBadge name={client} />
+              </li>
+            ))}
+          </ul>
+
+          <ul
+            role="list"
+            aria-hidden="true"
+            className="animate-marquee-continuous-right"
+            style={{
+              listStyle: "none",
+              paddingLeft: 0,
+              margin: 0,
+            }}
+          >
+            {row2Clients.map((client, index) => (
+              <li key={`r2-t2-${client}-${index}`}>
+                <ClientBadge name={client} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Desktop & Tablet: Single-Liner Continuous Marquee (≥768px) */}
+      <div
+        className="desktop-marquee-wrap marquee-mask marquee-wrapper"
         style={{
           width: "100%",
           overflow: "hidden",
-          display: "flex",
           position: "relative",
         }}
       >
         <ul
           role="list"
           aria-label="Client marquee"
-          className="animate-marquee"
+          className="animate-marquee-continuous"
           style={{
-            alignItems: "center",
-            gap: "2.5rem",
             listStyle: "none",
             paddingLeft: 0,
-            paddingRight: "2.5rem",
+            margin: 0,
           }}
         >
-          {marqueeClients.map((client, index) => (
-            <li key={`${client}-${index}`}>
+          {clients.map((client, index) => (
+            <li key={`dt-t1-${client}-${index}`}>
+              <ClientBadge name={client} />
+            </li>
+          ))}
+        </ul>
+
+        <ul
+          role="list"
+          aria-hidden="true"
+          className="animate-marquee-continuous"
+          style={{
+            listStyle: "none",
+            paddingLeft: 0,
+            margin: 0,
+          }}
+        >
+          {clients.map((client, index) => (
+            <li key={`dt-t2-${client}-${index}`}>
               <ClientBadge name={client} />
             </li>
           ))}

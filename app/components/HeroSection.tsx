@@ -155,18 +155,12 @@ export default function HeroSection() {
         {/* Focus Pillar Tags */}
         <div
           aria-label="Core focus areas"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-            justifyContent: "center",
-            maxWidth: "650px",
-          }}
+          className="hero-pillar-tags-grid"
         >
           <span className="hero-pill-badge">✦ Brand Systems</span>
-          <span className="hero-pill-badge">✦ Visual Identity</span>
-          <span className="hero-pill-badge">✦ Event Architecture</span>
-          <span className="hero-pill-badge">✦ Spatial Strategy</span>
+          <span className="hero-pill-badge">◈ Visual Identity</span>
+          <span className="hero-pill-badge">⬟ Event Architecture</span>
+          <span className="hero-pill-badge">✥ Spatial Strategy</span>
         </div>
 
         {/* CTA Buttons */}
@@ -199,15 +193,11 @@ export default function HeroSection() {
 
         {/* Proof Point Metrics */}
         <div
+          className="proof-metrics-grid"
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "2.5rem 4rem",
             marginTop: "1.5rem",
             paddingTop: "1.5rem",
             borderTop: "1px solid rgba(38, 38, 38, 0.6)",
-            width: "100%",
             maxWidth: "600px",
           }}
         >

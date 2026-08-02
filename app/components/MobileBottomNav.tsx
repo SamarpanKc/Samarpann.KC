@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface NavItem {
   id: string;
@@ -10,48 +10,92 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { id: "hero", label: "Home", href: "#hero" },
-  { id: "about", label: "About", href: "#about" },
   { id: "work", label: "Work", href: "#work" },
+  { id: "about", label: "About", href: "#about" },
   { id: "contact", label: "Contact", href: "#contact" },
 ];
 
 export default function MobileBottomNav() {
   const [activeSection, setActiveSection] = useState<string>("hero");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [isMerging, setIsMerging] = useState<boolean>(false);
+  const isNavClickRef = useRef<boolean>(false);
+  const clickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const activeIndex = Math.max(
+    0,
+    navItems.findIndex((item) => item.id === activeSection)
+  );
+
+  useEffect(() => {
+    setIsMerging(true);
+    const timer = setTimeout(() => setIsMerging(false), 280);
+    return () => clearTimeout(timer);
+  }, [activeSection]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-      const sections = navItems.map((item) => ({
-        id: item.id,
-        element: document.getElementById(item.id),
-      }));
+      if (isNavClickRef.current) return; // Lock scroll updates during nav click
 
-      // Check sections from bottom to top
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sec = sections[i];
-        if (sec.element) {
-          const top = sec.element.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(sec.id);
-            break;
-          }
+      const triggerPoint = window.innerHeight * 0.4; // 40% down the viewport
+
+      const sections = navItems.map((item) => {
+        const el = document.getElementById(item.id);
+        if (!el) return { id: item.id, top: Infinity, bottom: -Infinity };
+        const rect = el.getBoundingClientRect();
+        return { id: item.id, top: rect.top, bottom: rect.bottom };
+      });
+
+      // Find the current section in viewport
+      let currentActive = "hero";
+      for (const sec of sections) {
+        if (sec.top <= triggerPoint && sec.bottom > 100) {
+          currentActive = sec.id;
         }
       }
+
+      // If scrolled to very bottom of page, highlight contact
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 50
+      ) {
+        currentActive = "contact";
+      }
+
+      setActiveSection(currentActive);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+    };
   }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setActiveSection(id);
+
+    // Lock scroll handler while smooth scrolling to target section
+    isNavClickRef.current = true;
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+    clickTimerRef.current = setTimeout(() => {
+      isNavClickRef.current = false;
+    }, 850);
+
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerOffset = id === "hero" ? 0 : 50;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = Math.max(0, elementPosition - headerOffset);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -70,16 +114,24 @@ export default function MobileBottomNav() {
         justifyContent: "center",
         gap: "6px",
         padding: "6px",
-        backgroundColor: "rgba(18, 18, 18, 0.85)",
+        backgroundColor: "rgba(14, 14, 14, 0.88)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
-        border: "1px solid rgba(255, 255, 255, 0.12)",
+        border: "1px solid rgba(255, 236, 209, 0.15)",
         borderRadius: "9999px",
         boxShadow:
-          "0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          "0 12px 36px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 236, 209, 0.12)",
         transition: "transform 0.2s ease, opacity 0.2s ease",
       }}
     >
+      {/* Hardware-Accelerated Active Circle Bubble Indicator */}
+      <div
+        className="liquid-bubble-indicator"
+        style={{
+          transform: `translate3d(${activeIndex * 52}px, 0, 0)`,
+        }}
+      />
+
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
         const isHovered = hoveredId === item.id;
@@ -95,6 +147,8 @@ export default function MobileBottomNav() {
             aria-current={isActive ? "page" : undefined}
             title={item.label}
             style={{
+              position: "relative",
+              zIndex: 2,
               width: "46px",
               height: "46px",
               borderRadius: "50%",
@@ -102,21 +156,17 @@ export default function MobileBottomNav() {
               alignItems: "center",
               justifyContent: "center",
               color: isActive
-                ? "#FFFFFF"
-                : isHovered
                 ? "#FFECD1"
-                : "rgba(255, 255, 255, 0.55)",
-              backgroundColor: isActive
-                ? "rgba(255, 255, 255, 0.16)"
                 : isHovered
-                ? "rgba(255, 255, 255, 0.07)"
-                : "transparent",
-              boxShadow: isActive
-                ? "inset 0 0 0 1px rgba(255, 255, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.3)"
-                : "none",
-              transition:
-                "background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease, transform 0.15s ease",
-              transform: isActive ? "scale(1.04)" : isHovered ? "scale(1.05)" : "scale(1)",
+                ? "#FFFFFF"
+                : "rgba(255, 236, 209, 0.55)",
+              backgroundColor: "transparent",
+              transition: "color 0.25s ease, transform 0.2s ease",
+              transform: isActive
+                ? "scale(1.05)"
+                : isHovered
+                ? "scale(1.04)"
+                : "scale(1)",
               textDecoration: "none",
               outline: "none",
               WebkitTapHighlightColor: "transparent",

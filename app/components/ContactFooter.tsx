@@ -145,7 +145,7 @@ export default function ContactFooter() {
                 {
                   id: "linkedin-link",
                   label: "LinkedIn",
-                  href: "https://linkedin.com/in/samarpannkc",
+                  href: "https://np.linkedin.com/in/samarpankc",
                   icon: (
                     <svg
                       width="18"
@@ -161,7 +161,7 @@ export default function ContactFooter() {
                 {
                   id: "behance-link",
                   label: "Behance",
-                  href: "https://behance.net/samarpannkc",
+                  href: "https://www.behance.net/samarpankc",
                   icon: (
                     <svg
                       width="18"
@@ -177,7 +177,7 @@ export default function ContactFooter() {
                 {
                   id: "instagram-link",
                   label: "Instagram",
-                  href: "https://instagram.com/samarpannkc",
+                  href: "https://www.instagram.com/samarpann_kc_6/",
                   icon: (
                     <svg
                       width="18"
