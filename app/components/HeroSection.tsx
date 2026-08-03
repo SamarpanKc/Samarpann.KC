@@ -13,7 +13,7 @@ export default function HeroSection() {
         padding: "7.5rem 1.5rem 4rem",
         position: "relative",
         overflow: "hidden",
-        backgroundColor: "#0A0A0A",
+        backgroundColor: "#201a1c",
       }}
     >
       {/* Background Subtle Grid Pattern */}
@@ -40,7 +40,7 @@ export default function HeroSection() {
           height: "min(800px, 92vw)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(255,125,0,0.12) 0%, rgba(255,125,0,0.02) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(241,80,36,0.18) 0%, rgba(134,42,205,0.14) 45%, transparent 70%)",
           pointerEvents: "none",
           filter: "blur(40px)",
         }}
@@ -66,8 +66,8 @@ export default function HeroSection() {
             alignItems: "center",
             gap: "0.625rem",
             padding: "0.4rem 1rem",
-            backgroundColor: "rgba(18, 18, 18, 0.8)",
-            border: "1px solid rgba(255, 236, 209, 0.12)",
+            backgroundColor: "rgba(40, 32, 35, 0.8)",
+            border: "1px solid rgba(241, 80, 36, 0.25)",
             borderRadius: "9999px",
             fontSize: "0.8125rem",
             fontWeight: 500,
@@ -103,10 +103,10 @@ export default function HeroSection() {
             letterSpacing: "-0.04em",
           }}
         >
-          Hi, I'm{" "}
+          Namaste, I'm{" "}
           <span
             style={{
-              background: "linear-gradient(135deg, #FF7D00 0%, #FFA84C 100%)",
+              background: "linear-gradient(135deg, #FFECD1 0%, #ffc6b7ff 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -120,7 +120,7 @@ export default function HeroSection() {
         <p
           className="text-body"
           style={{
-            color: "#8C867D",
+            color: "#9E9296",
             maxWidth: "640px",
             fontSize: "1.0625rem",
             lineHeight: "1.6",
@@ -197,7 +197,7 @@ export default function HeroSection() {
           style={{
             marginTop: "1.5rem",
             paddingTop: "1.5rem",
-            borderTop: "1px solid rgba(38, 38, 38, 0.6)",
+            borderTop: "1px solid #3c3034",
             maxWidth: "600px",
           }}
         >
@@ -215,7 +215,7 @@ export default function HeroSection() {
             <div
               style={{
                 fontSize: "0.75rem",
-                color: "#8C867D",
+                color: "#9E9296",
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginTop: "0.125rem",
@@ -230,7 +230,7 @@ export default function HeroSection() {
               style={{
                 fontSize: "1.75rem",
                 fontWeight: 700,
-                color: "#FF7D00",
+                color: "#f15024",
                 letterSpacing: "-0.03em",
               }}
             >
@@ -239,7 +239,7 @@ export default function HeroSection() {
             <div
               style={{
                 fontSize: "0.75rem",
-                color: "#8C867D",
+                color: "#9E9296",
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginTop: "0.125rem",
@@ -263,7 +263,7 @@ export default function HeroSection() {
             <div
               style={{
                 fontSize: "0.75rem",
-                color: "#8C867D",
+                color: "#9E9296",
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 marginTop: "0.125rem",

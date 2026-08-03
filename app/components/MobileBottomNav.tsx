@@ -114,10 +114,10 @@ export default function MobileBottomNav() {
         justifyContent: "center",
         gap: "6px",
         padding: "6px",
-        backgroundColor: "rgba(14, 14, 14, 0.88)",
+        backgroundColor: "rgba(32, 26, 28, 0.88)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
-        border: "1px solid rgba(255, 236, 209, 0.15)",
+        border: "1px solid rgba(241, 80, 36, 0.25)",
         borderRadius: "9999px",
         boxShadow:
           "0 12px 36px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 236, 209, 0.12)",
@@ -213,7 +213,7 @@ function HomeIcon({ active }: { active: boolean }) {
         />
         <path
           d="M9 16C9 14.34 10.34 13 12 13C13.66 13 15 14.34 15 16"
-          stroke="#141414"
+          stroke="#201a1c"
           strokeWidth="2.2"
           strokeLinecap="round"
         />
@@ -293,7 +293,7 @@ function BriefcaseIcon({ active }: { active: boolean }) {
           strokeWidth="2.2"
           strokeLinecap="round"
         />
-        <circle cx="12" cy="13.5" r="1.5" fill="#141414" />
+        <circle cx="12" cy="13.5" r="1.5" fill="#201a1c" />
       </svg>
     );
   }
@@ -329,7 +329,7 @@ function MailIcon({ active }: { active: boolean }) {
         <rect x="2.5" y="5" width="19" height="14" rx="4" fill="currentColor" />
         <path
           d="M4.5 7.5L10.8 12.2C11.5 12.7 12.5 12.7 13.2 12.2L19.5 7.5"
-          stroke="#141414"
+          stroke="#201a1c"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"

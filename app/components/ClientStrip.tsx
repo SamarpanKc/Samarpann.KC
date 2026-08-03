@@ -25,11 +25,11 @@ export default function ClientStrip() {
     <section
       aria-label="Clients and collaborators"
       style={{
-        borderTop: "1px solid #262626",
-        borderBottom: "1px solid #262626",
+        borderTop: "1px solid #3c3034",
+        borderBottom: "1px solid #3c3034",
         padding: "2.5rem 0",
         overflow: "hidden",
-        backgroundColor: "#0C0C0C",
+        backgroundColor: "#1c1618",
         position: "relative",
       }}
     >
@@ -37,7 +37,7 @@ export default function ClientStrip() {
         <p
           className="text-label"
           style={{
-            color: "#8C867D",
+            color: "#9E9296",
             textAlign: "center",
             letterSpacing: "0.08em",
             fontSize: "0.75rem",
@@ -204,7 +204,7 @@ function ClientBadge({ name }: { name: string }) {
         fontWeight: 500,
         fontSize: "0.9375rem",
         letterSpacing: "0.03em",
-        color: hovered ? "#FF7D00" : "#FFECD1",
+        color: hovered ? "#f15024" : "#FFECD1",
         opacity: hovered ? 1 : 0.6,
         transition: "all 0.25s ease",
         cursor: "pointer",
@@ -219,7 +219,7 @@ function ClientBadge({ name }: { name: string }) {
           width: "4px",
           height: "4px",
           borderRadius: "50%",
-          backgroundColor: hovered ? "#FF7D00" : "rgba(255, 236, 209, 0.25)",
+          backgroundColor: hovered ? "#f15024" : "rgba(255, 236, 209, 0.25)",
           display: "inline-block",
           transition: "background-color 0.25s ease",
         }}

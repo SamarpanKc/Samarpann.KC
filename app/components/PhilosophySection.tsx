@@ -5,7 +5,7 @@ export default function PhilosophySection() {
       aria-labelledby="philosophy-heading"
       className="section-padding"
       style={{
-        borderTop: "1px solid #262626",
+        borderTop: "1px solid #3c3034",
       }}
     >
       <div className="container-wide">
@@ -28,7 +28,7 @@ export default function PhilosophySection() {
               right: 0,
               height: "2px",
               background:
-                "linear-gradient(90deg, transparent 0%, #FF7D00 50%, transparent 100%)",
+                "linear-gradient(90deg, transparent 0%, #f15024 45%, #862acd 75%, transparent 100%)",
             }}
           />
 
@@ -38,7 +38,7 @@ export default function PhilosophySection() {
             style={{
               fontSize: "5rem",
               lineHeight: 0.5,
-              color: "#FF7D00",
+              color: "#f15024",
               fontWeight: 700,
               opacity: 0.3,
               marginBottom: "1.5rem",
@@ -72,7 +72,7 @@ export default function PhilosophySection() {
             style={{
               width: "40px",
               height: "1px",
-              backgroundColor: "#262626",
+              backgroundColor: "#3c3034",
               margin: "2.5rem auto",
             }}
           />
@@ -81,7 +81,7 @@ export default function PhilosophySection() {
           <p
             className="text-body"
             style={{
-              color: "#8C867D",
+              color: "#9E9296",
               maxWidth: "520px",
               margin: "0 auto",
             }}
@@ -111,10 +111,10 @@ export default function PhilosophySection() {
                 key={skill}
                 style={{
                   padding: "0.375rem 0.875rem",
-                  border: "1px solid #262626",
+                  border: "1px solid #3c3034",
                   borderRadius: "9999px",
                   fontSize: "0.8125rem",
-                  color: "#8C867D",
+                  color: "#9E9296",
                   backgroundColor: "rgba(255,255,255,0.02)",
                 }}
               >

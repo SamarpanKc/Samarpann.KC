@@ -22,10 +22,10 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 50,
-          borderBottom: "1px solid #262626",
+          borderBottom: "1px solid #3c3034",
           backgroundColor: scrolled
-            ? "rgba(10,10,10,0.92)"
-            : "rgba(10,10,10,0.6)",
+            ? "rgba(32, 26, 28, 0.92)"
+            : "rgba(32, 26, 28, 0.6)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
           transition: "background-color 0.3s ease",
@@ -52,7 +52,7 @@ export default function Navbar() {
               transition: "color 0.2s ease",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "#FF7D00")
+              (e.currentTarget.style.color = "#f15024")
             }
             onMouseLeave={(e) =>
               (e.currentTarget.style.color = "#FFECD1")
@@ -99,7 +99,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
     <a
       href={href}
       style={{
-        color: hovered ? "#FF7D00" : "#FFECD1",
+        color: hovered ? "#f15024" : "#FFECD1",
         textDecoration: "none",
         fontSize: "0.9375rem",
         fontWeight: 500,
@@ -118,7 +118,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
           left: 0,
           right: 0,
           height: "1.5px",
-          backgroundColor: "#FF7D00",
+          backgroundColor: "#f15024",
           transform: hovered ? "scaleX(1)" : "scaleX(0)",
           transformOrigin: "left",
           transition: "transform 0.2s ease",

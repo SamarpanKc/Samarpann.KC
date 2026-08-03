@@ -12,12 +12,12 @@ const projects = [
     badge: "",
     description:
       "How visual discipline and high-visibility color systems coordinated thousands of runners and partners without visual chaos.",
-    gradient: "linear-gradient(135deg, #FF7D00 0%, #FF4500 40%, #1a0a00 100%)",
+    gradient: "linear-gradient(135deg, #f15024 0%, #862acd 50%, #201a1c 100%)",
     accentChar: "R",
     gridClass: "hgrid-hero-mobile hgrid-hero-tablet col-span-12-lg-8",
     aspectRatio: "16/9",
     featured: true,
-    accentColor: "#FF7D00",
+    accentColor: "#f15024",
   },
   {
     id: "square-auto",
@@ -26,12 +26,12 @@ const projects = [
     year: "2024",
     description:
       "Modern, clean, and sustainable automotive branding tailored for the rising EV market.",
-    gradient: "linear-gradient(135deg, #0a1628 0%, #1a3a6b 60%, #2563eb 100%)",
+    gradient: "linear-gradient(135deg, #201a1c 0%, #341c48 60%, #862acd 100%)",
     accentChar: "S",
     gridClass: "hgrid-half-mobile hgrid-half-tablet col-span-12-lg-4",
     aspectRatio: "4/3",
     featured: false,
-    accentColor: "#3b82f6",
+    accentColor: "#862acd",
   },
   {
     id: "feedax",
@@ -40,12 +40,12 @@ const projects = [
     year: "2023",
     description:
       "Communicating clinical authority, quality, and veterinary clarity on the shelf.",
-    gradient: "linear-gradient(135deg, #0a1a15 0%, #0d3326 60%, #059669 100%)",
+    gradient: "linear-gradient(135deg, #1c1822 0%, #451b32 60%, #f15024 100%)",
     accentChar: "F",
     gridClass: "hgrid-half-mobile hgrid-half-tablet col-span-12-lg-5",
     aspectRatio: "16/10",
     featured: false,
-    accentColor: "#10b981",
+    accentColor: "#f15024",
   },
   {
     id: "neplancer",
@@ -55,12 +55,12 @@ const projects = [
     subtitle: "Freelance Platform for Nepalese Talent",
     description:
       "Empowering Nepalese freelancers through a focused, user-centric marketplace experience.",
-    gradient: "linear-gradient(135deg, #0a0a14 0%, #1e1b4b 60%, #7c3aed 100%)",
+    gradient: "linear-gradient(135deg, #15101a 0%, #3d1b58 60%, #862acd 100%)",
     accentChar: "N",
     gridClass: "hgrid-full-mobile hgrid-full-tablet col-span-12-lg-7",
     aspectRatio: "16/9",
     featured: false,
-    accentColor: "#8b5cf6",
+    accentColor: "#862acd",
   },
   {
     id: "lions-intl",
@@ -69,13 +69,13 @@ const projects = [
     year: "2023",
     description:
       "Balancing global organizational prestige with sharp, modern executive aesthetics.",
-    gradient: "linear-gradient(135deg, #0d0a00 0%, #3b2a00 60%, #d97706 100%)",
+    gradient: "linear-gradient(135deg, #201a1c 0%, #521c26 60%, #f15024 100%)",
     accentChar: "L",
     gridClass: "hgrid-full-mobile hgrid-full-tablet col-span-12-full",
     aspectRatio: "21/9",
     featured: false,
     banner: true,
-    accentColor: "#f59e0b",
+    accentColor: "#f15024",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function WorkSection() {
       id="work"
       aria-labelledby="work-title"
       className="section-padding"
-      style={{ borderTop: "1px solid #262626" }}
+      style={{ borderTop: "1px solid #3c3034" }}
     >
       <div className="container-wide">
         {/* Section Header */}
@@ -104,13 +104,13 @@ export default function WorkSection() {
                 width: "8px",
                 height: "8px",
                 borderRadius: "50%",
-                backgroundColor: "#FF7D00",
+                backgroundColor: "#f15024",
                 display: "inline-block",
               }}
             />
             <p
               className="text-label"
-              style={{ color: "#FF7D00", letterSpacing: "0.08em" }}
+              style={{ color: "#f15024", letterSpacing: "0.08em" }}
             >
               Portfolio &amp; Case Studies
             </p>
@@ -134,7 +134,7 @@ export default function WorkSection() {
             </h2>
             <p
               style={{
-                color: "#8C867D",
+                color: "#9E9296",
                 fontSize: "0.875rem",
                 maxWidth: "36ch",
               }}
@@ -168,7 +168,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       style={{
         padding: project.featured ? "1.5rem" : "1.25rem",
         cursor: "pointer",
-        borderColor: "#262626",
+        borderColor: "#3c3034",
         boxShadow: "none",
         transform: "none",
         display: "flex",
@@ -229,11 +229,11 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               top: "1rem",
               left: "1rem",
               padding: "0.35rem 0.85rem",
-              backgroundColor: "rgba(255, 125, 0, 0.95)",
+              backgroundColor: "rgba(241, 80, 36, 0.95)",
               borderRadius: "8px",
               fontSize: "0.75rem",
               fontWeight: 700,
-              color: "#0A0A0A",
+              color: "#FFFFFF",
               letterSpacing: "0.03em",
               boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
               backdropFilter: "blur(6px)",
@@ -252,7 +252,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             bottom: "1rem",
             right: "1rem",
             padding: "0.3rem 0.75rem",
-            backgroundColor: "rgba(10, 10, 10, 0.75)",
+            backgroundColor: "rgba(32, 26, 28, 0.85)",
             border: `1px solid ${hovered ? project.accentColor : "rgba(255, 236, 209, 0.15)"}`,
             borderRadius: "9999px",
             fontSize: "0.7rem",
@@ -321,7 +321,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             className="work-card-description"
             style={{
               fontSize: "0.875rem",
-              color: "#8C867D",
+              color: "#9E9296",
               lineHeight: 1.55,
               maxWidth: project.banner ? "65ch" : "44ch",
             }}
@@ -335,7 +335,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
             style={{
               fontSize: "0.8125rem",
               fontWeight: 600,
-              color: "#6b655b",
+              color: "#7a6e72",
               letterSpacing: "0.05em",
             }}
           >
@@ -355,7 +355,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               alignItems: "center",
               justifyContent: "center",
               transition: "all 0.25s ease",
-              color: hovered ? "#0A0A0A" : "#8C867D",
+              color: hovered ? "#FFFFFF" : "#9E9296",
               transform: hovered ? "translate(2px, -2px)" : "translate(0, 0)",
             }}
           >

@@ -32,7 +32,7 @@ export default function ContactFooter() {
       id="contact"
       aria-labelledby="contact-heading"
       style={{
-        borderTop: "1px solid #262626",
+        borderTop: "1px solid #3c3034",
         padding: "4.5rem 1.5rem 3rem",
       }}
     >
@@ -49,7 +49,7 @@ export default function ContactFooter() {
           <div>
             <p
               className="text-label"
-              style={{ color: "#FF7D00", marginBottom: "1rem" }}
+              style={{ color: "#f15024", marginBottom: "1rem" }}
             >
               Let&apos;s Collaborate
             </p>
@@ -62,7 +62,7 @@ export default function ContactFooter() {
             </h2>
             <p
               className="text-body"
-              style={{ color: "#8C867D", maxWidth: "38ch" }}
+              style={{ color: "#9E9296", maxWidth: "38ch" }}
             >
               Have an event or brand identity that needs clarity and impact?
               I&apos;m currently taking on new projects.
@@ -81,7 +81,7 @@ export default function ContactFooter() {
             <div>
               <p
                 className="text-label"
-                style={{ color: "#8C867D", marginBottom: "0.5rem" }}
+                style={{ color: "#9E9296", marginBottom: "0.5rem" }}
               >
                 Email
               </p>
@@ -102,7 +102,7 @@ export default function ContactFooter() {
                   border: "none",
                   cursor: "pointer",
                   padding: 0,
-                  color: copied ? "#FF7D00" : "#FFECD1",
+                  color: copied ? "#f15024" : "#FFECD1",
                   fontSize: "1.0625rem",
                   fontWeight: 500,
                   fontFamily: "inherit",
@@ -117,12 +117,12 @@ export default function ContactFooter() {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "0.25rem 0.625rem",
-                    backgroundColor: copied ? "#FF7D00" : "#1a1a1a",
-                    border: `1px solid ${copied ? "#FF7D00" : "#262626"}`,
+                    backgroundColor: copied ? "#f15024" : "#282023",
+                    border: `1px solid ${copied ? "#f15024" : "#3c3034"}`,
                     borderRadius: "6px",
                     fontSize: "0.75rem",
                     fontWeight: 600,
-                    color: copied ? "#0A0A0A" : "#8C867D",
+                    color: copied ? "#FFFFFF" : "#9E9296",
                     transition: "all 0.2s ease",
                     letterSpacing: "0.04em",
                     userSelect: "none",
@@ -215,7 +215,7 @@ export default function ContactFooter() {
                 height="14"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#8C867D"
+                stroke="#9E9296"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -227,11 +227,11 @@ export default function ContactFooter() {
               <p
                 style={{
                   fontSize: "0.875rem",
-                  color: "#8C867D",
+                  color: "#9E9296",
                 }}
               >
                 Pokhara, Nepal{" "}
-                <span style={{ color: "#4a4540" }}>(GMT+5:45)</span>
+                <span style={{ color: "#6b5e62" }}>(GMT+5:45)</span>
               </p>
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function ContactFooter() {
           style={{
             marginTop: "3.5rem",
             paddingTop: "1.25rem",
-            borderTop: "1px solid #1a1a1a",
+            borderTop: "1px solid #3c3034",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -250,10 +250,10 @@ export default function ContactFooter() {
             gap: "1rem",
           }}
         >
-          <p style={{ fontSize: "0.8125rem", color: "#4a4540" }}>
+          <p style={{ fontSize: "0.8125rem", color: "#6b5e62" }}>
             © {new Date().getFullYear()} Samarpann KC. All rights reserved.
           </p>
-          <p style={{ fontSize: "0.8125rem", color: "#4a4540" }}>
+          <p style={{ fontSize: "0.8125rem", color: "#6b5e62" }}>
             Design is communication, not just decoration.
           </p>
         </div>
@@ -288,7 +288,7 @@ function SocialLink({
         display: "inline-flex",
         alignItems: "center",
         gap: "0.5rem",
-        color: hovered ? "#FF7D00" : "#8C867D",
+        color: hovered ? "#f15024" : "#9E9296",
         textDecoration: "none",
         fontSize: "0.9375rem",
         fontWeight: 500,
