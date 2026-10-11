@@ -1,21 +1,27 @@
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import ClientStrip from "./components/ClientStrip";
-import WorkSection from "./components/WorkSection";
-import PhilosophySection from "./components/PhilosophySection";
-import ContactFooter from "./components/ContactFooter";
+import { CassetteScroller } from "@/components/layout/CassetteScroller";
+import { RevealObserver } from "@/components/layout/RevealObserver";
+import { About } from "@/components/sections/About";
+import { Contact } from "@/components/sections/Contact";
+import { Experience } from "@/components/sections/Experience";
+import { Hero } from "@/components/sections/Hero";
+import { Process } from "@/components/sections/Process";
+import { Services } from "@/components/sections/Services";
+import { Works } from "@/components/sections/Works";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main id="main-content">
-        <HeroSection />
-        <ClientStrip />
-        <WorkSection />
-        <PhilosophySection />
+      <main className="overflow-x-clip">
+        <Hero />
+        <Works />
+        <About />
+        <Services />
+        <Process />
+        <Experience />
+        <Contact />
       </main>
-      <ContactFooter />
+      <CassetteScroller />
+      <RevealObserver />
     </>
   );
 }
